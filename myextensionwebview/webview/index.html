@@ -6,20 +6,208 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login to your profile| Western Union IN</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playfair+Display:wght@500&display=swap');
 
-    <link rel="stylesheet" href="style.css">
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+} */
+
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background: #EBECE7;
+    
+}
+
+
+.header {
+    border: 1px solid black;
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    padding: 3%;
+    font-family:'Open Sans', sans-serif;
+    /* background-color: rgb(22, 22, 19); */
+    background-color: #333;
+    color: white;
+}
+
+/* .header h1{
+   
+    display: inline-block;
+    margin: 1px;
+    padding: 1px;
+    transform: translate(80%, -50%);
+    text-align: center;
+    
+} */
+
+.header img{
+    width:200px;
+    height: 200px;
+    /* float: left;
+    clear: right; */
+    position: absolute;
+    left: 5%;
+    transform: translateY(-50%);
+    
+   
+}
+
+.box{
+    /* border: 1px solid black; */
+    width: 50%;
+    height: 50%;
+    margin: 5%;
+    padding: 2% 4%;
+    display: inline-block;
+    transform: translate(40%, 5%);
+    background-color: white;
+    font-family:'Open Sans', sans-serif;
+}
+
+.box h2{
+    padding-bottom: 2%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 1;
+}
+
+.register a{
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #0A7099;
+    /* transform: translateX(75%); */
+}
+
+
+.text-input{
+    width: 100%;
+    padding-left: 8%;
+    border: none;
+    outline: none;
+    /* margin: 2%; */
+    
+}
+
+
+.textfield{
+    width: 100%;
+    padding: 2% ;
+    border: 1px solid #D3D3D3;
+    margin: 2% 0;
+    border-radius: 2px;
+    /* margin-right: 4%; */
+    
+}
+
+.email i{
+    
+    position: absolute;
+    left: 70px;
+    top: 92px;  
+}
+
+.password i{
+    
+    position: absolute;
+    left: 70px;
+    top: 180px;
+}
+
+.text{
+    display: inline-block;
+    /* justify-content: end; */
+    color: #0A7099;
+    transform: translateX(315%);
+    text-decoration: none;
+}
+
+.text a{
+    color: #0A7099;
+    text-decoration: none;
+    /* transform: translateX(0%); */
+    /* padding-right: auto; */
+}
+
+.continue button{
+    width: 100%;
+    margin: 5% 0;
+    padding: 2%;
+    background-color: #045F86;
+    color: white;
+    border: none;
+    border-radius: 2px;
+}
+
+
+.footer{
+    background-color: white;
+    width: 100%;
+    height: 40%;
+    font-family:'Open Sans', sans-serif;
+
+}
+
+.footer a{
+    text-decoration: none;
+    color: black;
+    padding-bottom: 6%;
+
+}
+.att-foot{
+    /* border: 1px solid black; */
+    width: 83%;
+    transform: translate(12%, 100%);
+}
+.span-foot{
+    font-size: 0.7rem;
+    margin: 2% 0;
+    padding: 2% 0;
+}
+
+.line-foot{
+    width: 30%;
+    display: inline-block;
+    /* border: 1px solid black; */
+    transform: translate(33%, 150%);
+    /* display: flex;
+    justify-content: space-between; */
+}
+
+.follow{
+    transform: translate(200%, -80%);
+    /* display: block; */
+    
+}
+
+.logo-icon i{
+    padding: 2%;
+}
+
+.logo-foot{
+    transform: translate(198%, -60%);
+}
+    </style>
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
     </head>
 
 <body>
-    <div class="container">
+    <div class="container" style="width: 100vw;height: 100vh;background: #EBECE7;">
         <header >
             <nav class="header">
                 <img src="data:image/png;base64,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" alt="logo">
-                <!-- <h1> Western Union</h1> -->
+                
             </nav>
         </header>
         <main>
-        <!-- <div class="form"> -->
+        
             <form action="#">
                 <div class="box" ng-controller="LoginController">
                     <h2>
@@ -62,11 +250,11 @@
                 </div>
 
             </form>
-        <!-- </div> -->
+        
         
     </main>
     <footer class="footer">
-        <!-- <hr> -->
+
         <div class="att-foot">
             <span class="span-foot">
                 <a href="#">Home |</a>
@@ -80,7 +268,6 @@
                 <a href="#">Cookie information |</a>
                 <a href="#">Investor relations |</a>
                 <a href="#">Careers |</a>
-                <!-- <a href="#">|</a> -->
                 <a href="#">Online Privacy Statement |</a>
                 <a href="#">Terms & Conditions |</a>
                 <a href="#">Sitemap</a>
