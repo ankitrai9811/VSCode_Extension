@@ -12,12 +12,11 @@ export function activate(context: vscode.ExtensionContext) {
                 'My Extension', // Title
                 vscode.ViewColumn.One, // Column to show the panel in
                 {
-                    enableScripts: true, // Enable JavaScript in the webview
-                    retainContextWhenHidden: true, // Keep the webview content when not visible
+                    enableScripts: true, 
+                    retainContextWhenHidden: true, 
                 }
             );
 
-            // Read the HTML file and set it as the webview's content
             const htmlPath = vscode.Uri.file(
                 path.join(context.extensionPath, 'webview', 'index.html')
             );
@@ -26,7 +25,7 @@ export function activate(context: vscode.ExtensionContext) {
         })
     );
 
-    // Register the command to open the webview
+ 
     context.subscriptions.push(
         vscode.commands.registerCommand('extension.openWebviewForm', () => {
             vscode.commands.executeCommand('extension.openWebview');
